@@ -5,15 +5,29 @@
 
 
 {% block content %}
-
-<div class="row">
-
-
-    {% for post in object_list %}
-    <div class="col-md-3" style="width: 18rem; height: 18rem;" id="images">
-        <img class="card-img-top" src="{{ post.image.url }}" alt="{{ post.title }}">
-        <p> {{ post.title }} </p>
+<div class="container-fluid">
+    <div class="row">
+        {% for post in object_list %}
+        <div class="col-md-3 single_portfolio_text" style="width: 18rem;">
+            <img src="{{ post.image.url }}" alt="" class="img-responsive" />
+  
+            <div class="portfolio_images_overlay text-center">
+              <h5 id="text" class="text-white">{{ post.title }}</h5>
+              <hr>
+              <p class="text-white"> {{ post.image_description }} </p>
+              <p class="text-white"><i class="fa fa-map-marker" aria-hidden="true"></i> {{ post.image_location }} </p>
+  
+                <input type="text" id="imagelink" class="form-control input-sm" value="https://my-memoirs.herokuapp.com{{ post.image.url }}"
+                    class="hidden">
+                <div class="top">
+                    <button class="btn btn-success" onclick="CopyFunction()">Copy Link</button>
+  
+                    <a class="fancybox btn btn-custom" rel="gallery" href="{{ post.image.url }}">View Image</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
+  </div>
 {% endblock content %}
+
