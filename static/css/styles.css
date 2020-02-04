@@ -1,3 +1,4 @@
+
 .single_portfolio_text{
     display:inline-block;
     padding:0;
@@ -27,4 +28,34 @@
     left: 5%;
     position: absolute;
     transition:.6s;
+  }
+
+  #locate {
+      font-size: 13px;
+  }
+
+  @media (min-width:769px) and (max-width:991px) {
+    .portfolio_images_overlay {
+      padding: 0px;
+    }
+  }
+  @media (max-width:768px) {
+    .portfolio_images_overlay{
+      padding: 170px 20px;
+    }
+  }
+  @media (max-width:580px) {
+    .portfolio_images_overlay{
+      padding: 100px 20px;
+    }
+  }
+  @media (max-width:480px) {
+    .portfolio_images_overlay{
+      padding: 40px 20px;
+    }
+  }
+  @media (max-width:320px) {
+    .portfolio_images_overlay{
+      padding: 20px;
+    }
   }
